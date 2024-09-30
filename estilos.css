@@ -1,0 +1,174 @@
+style:root {
+    /*Etiqueta raíz para definir variables*/
+
+    --tono: 160;
+    --complemento: 190;
+
+    --color-primario: hsla(var(--tono), 100%, 50%, 1);
+    --color-primario-medio: hsla(var(--tono), 100%, 75%, 1);
+    --color-primario-claro: hsla(var(--tono), 100%, 95%, 1);
+    --color-primario-oscuro: hsla(var(--tono), 100%, 15%, 1);
+    --color-primario-oscuro-medio: hsla(var(--tono), 30%, 40%, 1);
+
+    --color-complemento: hsla(var(--complemento), 100%, 30%, 1);
+}
+
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.caja-imagen {
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+.caja-titulo {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.caja-parrafo {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.caja-comentario {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.custom {
+    border-left: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+
+
+
+
+}
+
+.caja {
+    background-color: rgb(1, 71, 117);
+    border-radius: 40px;
+    animation-name: flotar;
+    /*Nombre de la animación*/
+    animation-duration: 3s;
+    /*duración de la animación*/
+    animation-iteration-count: infinite;
+    /*Veces que se repite la aniamción*/
+    animation-timing-function: ease-in-out;
+    /*Curva de velocidad de la animación*/
+
+    /* transform: translateY(50px); */
+    /*translateX(100px)*/
+    /*scale(1.5)*/
+    /*rotate(180deg)*/
+    /*skew(100px)*/
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+
+.titulo {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.caja-titulo {
+    border-radius: 30px;
+    background-color: rgb(201, 105, 42);
+    width: 500px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.caja-parrafo {
+    border-radius: 30px;
+    background-color: rgb(201, 105, 42);
+    width: 1000px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.caja-comentario {
+    border-radius: 100px;
+    background-color: rgb(201, 105, 42);
+    width: 500px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+
+@media screen and (max-width: 764px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .caja-imagen {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .caja-titulo {
+        grid-area: 2 / 1 / 3 / 2;
+        width: 240px;
+        height: 100px;
+        font-size: 10px;
+    }
+
+    .caja-parrafo {
+        grid-area: 3 / 1 / 4 / 2;
+        width: 240px;
+        height: 100px;
+        font-size: 10px;
+    }
+
+    .caja-comentario {
+        grid-area: 4 / 1 / 5 / 2;
+        width: 240px;
+        height: 100px;
+        font-size: 10px;
+
+    }
+
+    .custom {
+        width: 240px;
+        height: 270px;
+        object-fit: cover;
+        border-radius: 40px;
+    }
+
+    .caja {
+        width: 240px;
+
+    }
+
+}
